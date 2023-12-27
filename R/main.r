@@ -58,7 +58,7 @@ plot(sf::st_geometry(north_africa_bbox))
 # 5. NORTH AFRICA ELEVATION
 
 north_africa_dem <- elevatr::get_elev_raster(
-    locations = north_africa_bbox,
+    locations = north_africa_bbox |> sf::st_as_sf(),
     z = 5, clip = "bbox"
 )
 
